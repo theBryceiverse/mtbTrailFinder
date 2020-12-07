@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mountain Bike Trail Finder</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="index.css">
+    <!-- LeafletJS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+    <!-- LeafletJS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Mountain Bike Trail Finder</h1>
+
+        <form id="js-form" class="flex-parent">
+            <div>
+                <label for="city"></label>
+                <input type="text" name="city" id="city" placeholder="Search by city name" required>   
+            </div>
+            
+            <div>
+                <label for="distanceInMiles"></label>
+                <input type="number" name="distanceInMiles" id="distanceInMiles" placeholder="Max distance from location - (in miles)" required>   
+            </div>
+            
+            <div>
+                <label for="maxTrails"></label>
+                <input type="number" name="maxTrails" id="maxTrails" placeholder="Number of trails to return" required>    
+            </div>
+            
+            <input type="submit" value="Go!">
+        </form>
+
+        <h2>Map</h2>
+
+        <!-- LeafletJS -->
+        <div id="mapid" class="map"></div>
+        <!-- LeafletJS -->
+
+        <section id="weatherResults" class="hidden">
+                <h2>Weathers Conditions</h2>
+                <ul id="weatherResults-list" class="results-weather">
+                </ul>
+            </section>
+
+        <section id="results" class="hidden">
+            <h2>Trail results</h2>
+            <ul id="results-list" class="trail-ul">
+            </ul>
+        </section>
+
+        <p id="js-error-message" class="error-message"></p>
+    </div>
+    <!-- LeafletJS -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <!-- LeafletJS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>
