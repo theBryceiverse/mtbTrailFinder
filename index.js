@@ -28,10 +28,13 @@ function displayTrails(responseJson){
   for(i = 0; i < responseJson.trails.length; i++){
     $('#results-list').append(
       `<li class="results-trails no-list-style">
-        <h3>${responseJson.trails[i].name}</h3>
+        <a href="${responseJson.trails[i].url}" target="_blank">
+          <h3>${responseJson.trails[i].name}</h3>
+        </a>
         <p>${responseJson.trails[i].summary}</p>
-        <a href="${responseJson.trails[i].url}"><p class="p-url">${responseJson.trails[i].url}</p></a>
-        <img src="${responseJson.trails[i].imgMedium}">
+        <a href="${responseJson.trails[i].url}" target="_blank">
+          <img src="${responseJson.trails[i].imgMedium}">
+        </a>
         <p>${responseJson.trails[i].length} Miles</p>
         <p>Difficulty: ${responseJson.trails[i].difficulty}</p>
        </li>`
@@ -96,6 +99,25 @@ function getTrailData(lat, lon, distanceInMiles, maxTrails){
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
 }; 
+
+//////////////////////////////////////Handeling Geolocation Permission/////////////////////////////////////////////
+
+function success(pos) {
+  var crd = pos.coords;
+
+  console.log('Your current position is:');
+  console.log(`Latitude : ${crd.latitude}`);
+  console.log(`Longitude: ${crd.longitude}`);
+  console.log(`More or less ${crd.accuracy} meters.`);
+};
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+};
+
+navigator.geolocation.getCurrentPosition(success, error)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // leaflet global variable
 let mymap = L.map('mapid');

@@ -5,6 +5,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: slategrey;
 }
 
 h1 {
@@ -46,11 +47,12 @@ input[type="submit"] {
 .map {
   border: solid black 1px;
   box-shadow: 1px 1px 1px #303030;
+  margin-bottom: 20px;
 }
 
 #mapid { 
   height: 300px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 h2 {
@@ -73,6 +75,7 @@ h2 {
   border-radius: 10px;
   padding-left: 0;
   margin-bottom: 40px;
+  background-color: snow;
 }
 
 .trail-ul {
@@ -83,24 +86,40 @@ h2 {
   border: solid black 1px;
   box-shadow: 1px 1px 1px #303030;
   border-radius: 10px;
-  padding-left: 0;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-bottom: 20px;
   text-align: center;
+  background-color: snow;
 }
 
 .no-list-style {
   list-style-type: none;
 }
 
-.p-url {
-  word-break: break-all;
-}
-
 .weatherResponse {
   margin-left: 20px;
 }
 
+a {
+  text-decoration: none;
+}
 
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: #3495eb;
+}
+
+a:active {
+  color: black;
+}
 
 
 
