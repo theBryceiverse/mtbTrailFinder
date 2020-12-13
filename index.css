@@ -8,8 +8,31 @@ body {
   background-color: slategrey;
 }
 
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 h1 {
   text-align: center;
+}
+
+.content {
+  /* border: solid white 1px; */  /* DIV OutLine */
+  display: flex;
+  flex-direction: column;
+}
+
+.formClass {
+  max-width: 320px;
+
+  /* Flex parent for inputs */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* ///////////////////// */
+
+  /* border: solid black 1px; */  /* DIV OutLine */
 }
 
 input[type="text"] {
@@ -124,18 +147,117 @@ a:active {
 
 
 
-button {
-  padding: 5px;
+/* DIV OutLines */
+/* .mapdiv {
+  border: solid blue 1px;
 }
 
-button:hover {
-  cursor: pointer;
+.weatherSection {
+  border: solid red 1px;
 }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
+.resultsSection {
+  border: solid green 1px;
 }
+
+.resultsUl {
+  border: solid purple 1px;
+}
+
+.resultsLi {
+  border: solid orange 1px;
+} */
+
+
+
+
+
+/*iPhone portrait*/
+@media only screen and (min-width: 320px) {
+  .formClass {
+    /* Flex child of .content*/
+    align-self: center;
+    width: 320px; 
+  }
+
+  /* .resultsDiv {
+    align-self: center;
+    width: 320px;
+  } */
+
+  /* change weather & trail results to 320px */
+  .weatherSection {
+    align-self: center;
+    width: 320px; 
+  }
+
+  .resultsSection {
+    align-self: center;
+    width: 320px; 
+  }
+}
+
+/*iPhone landscape*/
+@media only screen and (min-width: 480px) {
+  .weatherSection {
+    width: 480px;
+  }
+
+  .results-weather {
+    display: flex;
+  }
+
+  .icon {
+    margin: 10px;
+  }
+
+  .weatherResponse {
+    margin-top: 40px;
+  }
+}
+
+/*Android landscape*/
+@media only screen and (min-width: 640px) {
+  .weatherSection {
+    width: 600px;
+  }
+
+  /* change trail result tiles to row / wrap content /  */
+  .results-trails{
+    width: 280px; /* width: 320px;  */
+    height: 100%; 
+  }
+
+  .trail-ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .resultsSection {
+    align-self: flex-start;
+    width: 100%;
+  }
+}
+
+/*iPad potrait*/
+@media only screen and (min-width: 768px) {
+ 
+}
+
+/*iPad lanscape / small laptop*/
+@media only screen and (min-width: 1024px) {
+ 
+}
+
+/*large desktop*/
+@media only screen and (min-width: 1600px) {
+ 
+}
+
+
+
+
 
 .error-message {
     color: red;
@@ -149,13 +271,3 @@ img {
   width: 200px; 
 }
 
-select {
-  width: 300px; 
-  height: 300px;
-}
-
-.flex-parent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
