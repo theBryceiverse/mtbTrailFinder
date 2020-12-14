@@ -1,3 +1,16 @@
+function checkEmptyImage(inputURL) {
+  let outputURL = inputURL
+  if (inputURL === undefined) {
+      outputURL = "https://legacytaylorsville.com/wp-content/uploads/2015/07/No-Image-Available1.png"
+  }
+  if (inputURL == null) {
+      outputURL = "https://legacytaylorsville.com/wp-content/uploads/2015/07/No-Image-Available1.png"
+  }
+  if (inputURL == '') {
+    outputURL = "https://legacytaylorsville.com/wp-content/uploads/2015/07/No-Image-Available1.png"
+}
+  return outputURL
+}
 
 function displayWeather(responseJson){
   $('#weatherResults-list').empty(); 
@@ -27,7 +40,7 @@ function displayTrails(responseJson){
         </a>
         <p>${responseJson.trails[i].summary}</p>
         <a href="${responseJson.trails[i].url}" target="_blank">
-          <img src="${responseJson.trails[i].imgMedium}">
+          <img src="${checkEmptyImage(responseJson.trails[i].imgMedium)}">
         </a>
         <p>${responseJson.trails[i].length} Miles</p>
         <p>Difficulty: ${responseJson.trails[i].difficulty}</p>
