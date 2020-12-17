@@ -12,22 +12,25 @@
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin=""/>
     <!-- LeafletJS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Sedgwick+Ave&family=Zilla+Slab&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Mountain Bike Trail Finder</h1>
+        <h1>Trail Finder</h1>
+        <h2><em>Mountain Biking</em></h2>
 
         <div class="content">
 
             <form id="js-form" class="formClass">
-                <div>
+                <div id="cityInputDiv">
                     <label for="city"></label>
                     <input type="text" name="city" id="city" placeholder="Search by city name" required>   
                 </div>
                 
                 <div>
                     <label for="distanceInMiles"></label>
-                    <input type="number" name="distanceInMiles" id="distanceInMiles" placeholder="Max distance from location - (in miles)" required>   
+                    <input type="number" name="distanceInMiles" id="distanceInMiles" placeholder="Max distance from location in miles" required>   
                 </div>
                 
                 <div>

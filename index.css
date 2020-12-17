@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Zilla Slab', serif;
 }
 
 body {
@@ -15,6 +15,11 @@ body {
 
 h1 {
   text-align: center;
+  font-family: 'Sedgwick Ave', cursive;
+}
+
+h2 em {
+  font-family: 'Sedgwick Ave', cursive;
 }
 
 .content {
@@ -71,6 +76,7 @@ input[type="submit"] {
   border: solid black 1px;
   box-shadow: 1px 1px 1px #303030;
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 #mapid { 
@@ -80,6 +86,7 @@ input[type="submit"] {
 
 h2 {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .weather-pic {
