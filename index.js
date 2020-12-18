@@ -69,7 +69,7 @@ function getWeather(searchCity, distanceInMiles, maxTrails){
       throw new Error(response.statusText);
     })
     .then(responseJson => {
-      console.log(responseJson)
+      //console.log(responseJson)
       let lat = responseJson.coord.lat
       let lon = responseJson.coord.lon
       getTrailData(lat, lon, distanceInMiles, maxTrails)
@@ -78,8 +78,6 @@ function getWeather(searchCity, distanceInMiles, maxTrails){
       mapLocation(lat, lon, distanceInMiles)
       displayWeather(responseJson)
     }) 
-    //displayResults(responseJson)
-    // .then(responseJson => console.log(JSON.stringify(responseJson)))
     .catch(err => {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
@@ -99,17 +97,13 @@ function getTrailData(lat, lon, distanceInMiles, maxTrails){
       throw new Error(response.statusText);
     })
     .then(responseJson => {
-      console.log(responseJson)
+      //console.log(responseJson)
       displayTrails(responseJson)
-      //Run Display function???
     }) 
-    //displayResults(responseJson)
-    // .then(responseJson => console.log(JSON.stringify(responseJson)))
     .catch(err => {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
 }; 
-
 
 // leaflet global variable
 let mymap = L.map('mapid');
@@ -156,19 +150,12 @@ function mapLocation(lat, lon, distanceInMiles){
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
-
     const searchCity = $('#city').val();
-    console.log(searchCity);
-  
+    //console.log(searchCity);
     const distanceInMiles = $('#distanceInMiles').val();
-    console.log(distanceInMiles);
-
+    //console.log(distanceInMiles);
     const maxTrails = $('#maxTrails').val();
-    console.log(maxTrails); 
-
-    //reviels map after "block geolocation" is chosen, but then
-    // $('#mapH2').removeClass('hidden');
-    // $('#mapid').removeClass('hidden');
+    //console.log(maxTrails); 
     
     getWeather(searchCity, distanceInMiles, maxTrails);
 
