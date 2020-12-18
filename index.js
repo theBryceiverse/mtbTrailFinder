@@ -1,3 +1,4 @@
+//Checks to see if there is an image to return and if not, displays "No Image" image
 function checkEmptyImage(inputURL) {
   let outputURL = inputURL
   if (inputURL === undefined) {
@@ -12,6 +13,7 @@ function checkEmptyImage(inputURL) {
   return outputURL
 }
 
+//Display funtion for Weather Conditions
 function displayWeather(responseJson){
   $('#weatherResults-list').empty(); 
   $('#weatherResults-list').append(
@@ -28,7 +30,7 @@ function displayWeather(responseJson){
   $('#weatherResults').removeClass('hidden'); 
 }
 
-
+//Display funtion for Trail Results
 function displayTrails(responseJson){
   $('#results-list').empty();
   
@@ -50,7 +52,7 @@ function displayTrails(responseJson){
   $('#results').removeClass('hidden');  
 }; 
 
-
+//Function gets weather data by city name and stores coordinates from city location into variables. These coordinate variables are used by both the MTB-Trail API and LeafletJS Map
 const apiKey = 'AAwRZXJN82UphfbxWJMgB7mBAMyiR7s4AYRHsIVJ'
 //const url = 'https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&key=200980188-5be1467292990e1d8f7b45e4bf146d25'; 
 
@@ -83,6 +85,7 @@ function getWeather(searchCity, distanceInMiles, maxTrails){
     });
 }; 
 
+//function gets trail data from MTB-Project API
 function getTrailData(lat, lon, distanceInMiles, maxTrails){
 
   const trailKey = '200980188-5be1467292990e1d8f7b45e4bf146d25'
@@ -113,7 +116,6 @@ let mymap = L.map('mapid');
 
 // leaflet initialization
 function mapInit(){
-  //let mymap = L.map('mapid'); //.setView([latitude, longitude], 8); //was 13 "This is Zoom"
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -124,16 +126,15 @@ function mapInit(){
     accessToken: 'pk.eyJ1IjoiYmdvdXQiLCJhIjoiY2s4Mzl2Nnc2MWI1NzNrbG5oZjgwbGJkcCJ9.hrw80AT7Rc-VUrCshSFAzg'
   }).addTo(mymap);
 
-  //uses location of user to start
-  //mymap.locate({setView: true, maxZoom: 8});
   mymap.setView([ 34.811889, -39.740455], 1);
 } 
 
-//leaflet change location 
+//function updates the maps location upon second search & updates radius circle
 function mapLocation(lat, lon, distanceInMiles){ 
   let latitude = lat; 
   let longitude = lon;
 
+  //converts miles to meters in order to update the map. LeafLetJS only accepts meters
   function getMeters(miles) {
     return miles*1609.344;
   }
@@ -151,7 +152,7 @@ function mapLocation(lat, lon, distanceInMiles){
   }).addTo(mymap);
 }; 
 
-
+//funtion waits for "sumbit" in form then run getWeather() function which initializes all other processes
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
