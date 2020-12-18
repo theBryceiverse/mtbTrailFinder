@@ -17,7 +17,7 @@ function checkEmptyImage(inputURL) {
 function displayWeather(responseJson){
   $('#weatherResults-list').empty(); 
   $('#weatherResults-list').append(
-    `<div class="weather-pic"><img class="icon" alt="weather icon" src="http://openweathermap.org/img/wn/${responseJson.weather[0].icon}@2x.png"></div>
+    `<div class="weather-pic"><img class="icon" alt="weather icon" src="https://openweathermap.org/img/wn/${responseJson.weather[0].icon}@2x.png"></div>
     <li class="no-list-style">
       <div class="weatherResponse">
         <h3>${responseJson.weather[0].description}</h3>
