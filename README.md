@@ -42,3 +42,8 @@ See below screen shots of an example search:
 ## Interactive Map Used
 
 - LeafletJS [LeafletJS Map](https://leafletjs.com/)
+
+## Updates 
+
+- Currently able to search my City Name however, you can also search by zip code as long as you add the two-letter country code and separate the zip and country code with a comma. For example, Boulder Colorado could be searched as "80301,US". Or Vancouver in British Columbia Canada would be searched as "V5k,CA". 
+A future version will have this implemented automatically so you can just search by zip code. 
