@@ -69,7 +69,7 @@ function getWeather(searchCity, distanceInMiles, maxTrails){
       throw new Error(response.statusText);
     })
     .then(responseJson => {
-      console.log(responseJson)
+      //console.log(responseJson)
       let lat = responseJson.coord.lat
       let lon = responseJson.coord.lon
       getTrailData(lat, lon, distanceInMiles, maxTrails)
@@ -97,7 +97,7 @@ function getTrailData(lat, lon, distanceInMiles, maxTrails){
       throw new Error(response.statusText);
     })
     .then(responseJson => {
-      console.log(responseJson)
+      //console.log(responseJson)
       displayTrails(responseJson)
     }) 
     .catch(err => {
@@ -151,11 +151,11 @@ function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
     const searchCity = $('#city').val();
-    console.log(searchCity);
+    //console.log(searchCity);
     const distanceInMiles = $('#distanceInMiles').val();
-    console.log(distanceInMiles);
+    //console.log(distanceInMiles);
     const maxTrails = $('#maxTrails').val();
-    console.log(maxTrails); 
+    //console.log(maxTrails); 
     
     getWeather(searchCity, distanceInMiles, maxTrails);
 
